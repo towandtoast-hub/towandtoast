@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Tow And Toast • Home</title>
 
-<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -17,9 +16,11 @@
 <body>
 <header class="site-header">
   <div class="brand">
+    <!-- LOGO: place your image at assets/logo.png (PNG or SVG). -->
+    <!-- If the image is missing, the text wordmark still shows. -->
     <a href="index.html" class="brand-link" aria-label="Tow And Toast home">
-      <img class="brand-mark" src="assets/logo.png" alt="Tow And Toast Mobile Bar logo">
-      <span class="brand-wordmark">Tow And Toast</span>
+      <img class="brand-mark" src="assets/logo.png" alt="Tow And Toast Mobile Bar logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" />
+      <span class="brand-wordmark" style="display:none;">Tow And Toast</span>
     </a>
   </div>
   <nav class="nav" role="navigation" aria-label="Main">
@@ -34,22 +35,69 @@
 </header>
 
 <main class="container">
-  <!-- Upgraded hero (big main box) -->
-  <section class="hero hero-pro">
-    <div class="hero-left">
-      <span class="hero-badge">Pittsburgh • Mobile Bar</span>
-      <h1 class="hero-title">
-        Craft Cocktails, <span>Anywhere the Party Goes</span>
+
+  <!-- HERO: polished “big box” with subtle trailer accent + CTAs -->
+  <section class="hero hero-refined">
+    <div class="hero-content">
+      <span class="chip">Pittsburgh • Mobile Bar</span>
+      <h1 class="display">
+        Craft Cocktails, <span class="accent">Anywhere the Party Goes</span>
       </h1>
-      <p class="hero-sub">
-        Woman-owned bartending bringing polished service, custom menus, and a good-time vibe to
+      <p class="lede">
+        Woman-owned bartending delivering polished service, custom menus, and a good-time vibe to
         weddings, showers, graduations, and private events.
       </p>
       <div class="cta-row hero-ctas">
         <a class="btn btn-primary" href="contact.html">Book Now</a>
         <a class="btn btn-outline" href="packages.html">View Packages</a>
       </div>
-      <ul class="hero-points">
-        <li>10+ years behind the bar—each</li>
+
+      <ul class="hero-bullets">
+        <li>10+ years behind the bar — each</li>
         <li>Signature cocktails & menu design</li>
-        <li>Trailer bar or sleek pop-up
+        <li>Trailer bar or sleek pop-up setups</li>
+      </ul>
+    </div>
+    <div class="hero-art" aria-hidden="true"></div>
+  </section>
+
+  <!-- 3 feature cards (your existing copy) -->
+  <section class="highlights">
+    <div class="card">
+      <h3>Experienced & Professional</h3>
+      <p>Each bartender has 10+ years behind the bar at Pittsburgh favorites. We bring the craft—and the fun.</p>
+    </div>
+    <div class="card">
+      <h3>Custom Menus</h3>
+      <p>Signature cocktails tailored to your event. We’ll design and print a menu that fits your vibe.</p>
+    </div>
+    <div class="card">
+      <h3>Trailer or Pop-Up</h3>
+      <p>Choose our full bar trailer or a sleek tabletop setup for smaller venues. We fit your space.</p>
+    </div>
+  </section>
+
+  <!-- NEW: 3-photo strip (one photo per highlight) -->
+  <section class="feature-photos" aria-label="Feature photos">
+    <!-- Replace the placeholders with <img> (see notes below) -->
+    <figure class="feat">
+      <div class="feat-ph"></div>
+      <figcaption>Experienced & Professional</figcaption>
+    </figure>
+    <figure class="feat">
+      <div class="feat-ph"></div>
+      <figcaption>Custom Menus</figcaption>
+    </figure>
+    <figure class="feat">
+      <div class="feat-ph"></div>
+      <figcaption>Trailer or Pop-Up</figcaption>
+    </figure>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>© <span id="year"></span> Tow And Toast • Pittsburgh, PA • <a href="mailto:towandtoast412@gmail.com">towandtoast412@gmail.com</a></p>
+</footer>
+</body>
+</html>
