@@ -77,3 +77,87 @@ a:hover{text-decoration:none}
 }
 .hero-badge{
   display:inline-block;background:#fff;border:1px solid #f6d8de;color:#a34e59;
+  padding:6px 10px;border-radius:999px;font-size:12px;font-weight:600;
+}
+.hero-title{
+  font-family:"Playfair Display",serif;font-size:46px;line-height:1.05;
+  margin:10px 0 8px;color:var(--ink);
+}
+.hero-title span{ color:var(--pink); }
+.hero-sub{ font-size:18px;color:#623a43;margin:0 0 16px; }
+.hero-ctas .btn{ transform:translateZ(0); }
+.hero-ctas .btn:hover{ box-shadow:0 8px 22px rgba(236,160,165,.25); }
+.hero-points{ margin:14px 0 0;padding-left:18px;color:#6b3f49;display:grid;gap:6px; }
+
+.hero-right{
+  display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:12px;align-content:start;
+}
+.hero-photo{
+  background:#fff;border:1px solid #f0e7e9;border-radius:16px;
+  box-shadow:0 12px 30px rgba(0,0,0,.06);min-height:180px;
+}
+.ph-lg{ grid-column:1 / -1; min-height:260px; }
+.ph-sm{ min-height:140px; }
+.ph-lg::before,.ph-sm::before{
+  content:"Upload photo";display:block;text-align:center;padding:10px 0;
+  font-size:12px;color:#a34e59;background:rgba(236,160,165,.10);
+  border-bottom-left-radius:16px;border-bottom-right-radius:16px;
+}
+
+/* ---------- Buttons / cards ---------- */
+.cta-row{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 18px;border-radius:999px;border:2px solid var(--pink);font-weight:600}
+.btn-primary{background:var(--pink);color:var(--white);border-color:var(--pink)}
+.btn-outline{background:transparent;color:var(--ink)}
+.btn:hover{opacity:.95;text-decoration:none}
+
+.highlights{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:26px}
+.card{background:var(--white);border:1px solid #eee;border-radius:16px;padding:18px;box-shadow:0 6px 18px rgba(17,18,20,0.04)}
+.card h3{margin-top:0}
+
+/* ---------- New: 3-photo strip under highlights ---------- */
+.highlight-photos{
+  margin-top:18px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
+}
+.hp-item{
+  background:var(--white);border:1px solid #f0e7e9;border-radius:16px;
+  padding:10px;box-shadow:0 10px 26px rgba(0,0,0,.05);
+}
+.hp{width:100%;height:220px;border-radius:10px;background:#fff;border:1px dashed #e8c9cf}
+.hp::before{
+  content:"Add photo";display:block;text-align:center;padding:8px 0;
+  font-size:12px;color:#a34e59;background:rgba(236,160,165,.10);
+  border-bottom-left-radius:10px;border-bottom-right-radius:10px;
+}
+.hp-item figcaption{text-align:center;margin-top:8px;font-size:14px;color:#7a6166}
+
+/* ---------- Embeds / misc ---------- */
+.calendar-embed iframe{width:100%;height:700px;border:0;border-radius:14px;box-shadow:0 6px 18px rgba(17,18,20,0.03)}
+.video-embed iframe{width:100%;height:560px;border:0;border-radius:14px;box-shadow:0 6px 18px rgba(17,18,20,0.03)}
+.form-embed iframe{width:100%;height:900px;border:0;border-radius:14px;box-shadow:0 6px 18px rgba(17,18,20,0.03)}
+
+.text-box{background:var(--white);border:1px solid #eee;border-radius:16px;padding:20px;box-shadow:0 6px 18px rgba(17,18,20,0.04)}
+.site-footer{padding:28px 20px;text-align:center;color:#555}
+.site-footer a{color:#555}
+
+/* ---------- Gallery lightbox ---------- */
+#gallery{display:grid;gap:28px}
+.gallery-year h2{margin:0 0 12px}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.gallery-grid img{width:100%;height:220px;object-fit:cover;border-radius:12px;border:1px solid #eee;display:block}
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center}
+.lightbox img{max-width:90vw;max-height:90vh;border-radius:10px}
+.lightbox.show{display:flex}
+
+/* ---------- Responsive tweaks ---------- */
+@media (max-width:980px){
+  .hero-pro{ grid-template-columns:1fr; }
+  .hero-right{ order:-1; }
+}
+@media (max-width:640px){
+  .hero-title{ font-size:34px; }
+  .video-embed iframe{ height:280px }
+  .calendar-embed iframe{ height:600px }
+  .form-embed iframe{ height:1000px }
+  .highlight-photos{ grid-template-columns:1fr }
+}
