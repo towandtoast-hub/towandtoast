@@ -1,4 +1,24 @@
-document.getElementById('year').textContent = new Date().getFullYear();
+// Footer year
+const y = document.getElementById('year');
+if (y) y.textContent = new Date().getFullYear();
+
+// Persistent active tab: auto-detect current page and mark nav link
+(function setActiveNav(){
+  const links = document.querySelectorAll('.nav a');
+  if (!links.length) return;
+
+  // Determine current file ("index.html" if trailing slash)
+  let file = window.location.pathname.split('/').pop();
+  if (!file || !file.includes('.')) file = 'index.html';
+
+  links.forEach(a => {
+    const target = (a.getAttribute('href') || '').split('/').pop();
+    if (target === file) {
+      a.classList.add('active');
+      a.setAttribute('aria-current','page');
+    }
+  });
+})();
 
 // Lightbox for gallery
 const lightbox = document.createElement('div');
@@ -9,6 +29,7 @@ lightbox.addEventListener('click', () => lightbox.classList.remove('show'));
 
 function renderGallery(data){
   const root = document.getElementById('gallery');
+  if (!root) return;
   root.innerHTML = '';
   Object.keys(data).sort().forEach(year => {
     const wrap = document.createElement('section');
@@ -33,13 +54,13 @@ function renderGallery(data){
   });
 }
 
-// Load gallery.json
+// Load gallery.json (if gallery exists)
 fetch('gallery.json')
- .then(r => r.json())
+ .then(r => r.ok ? r.json() : Promise.reject())
  .then(renderGallery)
  .catch(() => {
-   // fallback: show placeholders
-   renderGallery({
+   // fallback placeholders
+   renderGallery && renderGallery({
      "2025":["assets/gallery/2025/placeholder.png"],
      "2024":["assets/gallery/2024/placeholder.png"]
    });
