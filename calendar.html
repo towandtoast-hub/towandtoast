@@ -3,20 +3,30 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Tow And Toast</title>
+<title>Tow And Toast • Calendar</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css" />
 <script defer src="script.js"></script>
-
+<style>
+  :root{ --pink:#ECA0A5; --ink:#111214; --sand:#F7F5F4; --white:#FFFFFF; }
+  .calendar-hero{ background:linear-gradient(180deg, var(--white), #fff0f4); border:1px solid #f6d8de; border-radius:22px; padding:36px 22px; text-align:center; position:relative; overflow:hidden; }
+  .calendar-hero::after{ content:""; position:absolute; inset:auto -40% -60% -40%; height:260px; background:radial-gradient(60% 60% at 50% 0%, rgba(236,160,165,.25), rgba(236,160,165,0)); pointer-events:none; }
+  .calendar-title{ font-family:"Playfair Display",serif; font-size:42px; margin:0 0 10px; color:var(--pink); letter-spacing:.3px; }
+  .calendar-sub{ margin:0 auto 20px; max-width:700px; color:#a34e59; }
+  .divider{ width:110px; height:6px; border-radius:999px; margin:12px auto 20px; background:linear-gradient(90deg, transparent, var(--pink), transparent); opacity:.7; }
+  .calendar-card{ background:var(--white); border:1px solid #f0e7e9; border-radius:20px; padding:14px; box-shadow:0 16px 40px rgba(0,0,0,.06); max-width:1100px; margin:20px auto 6px; }
+  .calendar-frame{ width:100%; border:0; border-radius:14px; display:block; height:860px; }
+  .calendar-note{ text-align:center; margin-top:8px; font-size:14px; color:#8b5160; }
+  @media (max-width:1024px){ .calendar-title{ font-size:36px; } .calendar-frame{ height:760px; } }
+  @media (max-width:640px){ .calendar-title{ font-size:30px; } .calendar-sub{ padding:0 6px; } .calendar-frame{ height:620px; } }
+</style>
 </head>
 <body>
 <header class="site-header">
-  <div class="brand">
-    <a href="index.html" class="brand-link">Tow And Toast</a>
-  </div>
-  <nav class="nav">
+  <div class="brand"><a href="index.html" class="brand-link">Tow And Toast</a></div>
+  <nav class="nav" role="navigation" aria-label="Main">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="packages.html">Packages</a>
@@ -28,15 +38,21 @@
 </header>
 
 <main class="container">
-  <h1>Calendar</h1>
-  <p class="muted">To show your schedule, make a public Google Calendar and replace the <code>src</code> URL below with your calendar ID.</p>
-  <div class="calendar-embed">
-    <iframe src="https://calendar.google.com/calendar/u/0?cid=MmM3MTYzNzM0MTAzYjIxNTdmZDlhZDNjOTk0NTBjZDlkMDk1NWU1ZTE5NDg3YzQxOTNmOWMwZGFmMDcyNjdhN0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t" frameborder="0" scrolling="no"></iframe>
-  </div>
+  <section class="calendar-hero">
+    <h1 class="calendar-title">Book the Bar • See Our Availability</h1>
+    <div class="divider"></div>
+    <p class="calendar-sub">
+      Check live availability below—then <a href="contact.html" style="color:var(--pink);font-weight:600;text-decoration:underline">send your booking request</a>.
+    </p>
+    <div class="calendar-card">
+      <iframe class="calendar-frame" src="https://calendar.google.com/calendar/u/0?cid=MmM3MTYzNzM0MTAzYjIxNTdmZDlhZDNjOTk0NTBjZDlkMDk1NWU1ZTE5NDg3YzQxOTNmOWMwZGFmMDcyNjdhN0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t" scrolling="no"></iframe>
+    </div>
+    <p class="calendar-note">All times display in Eastern (New York) unless your browser overrides it.</p>
+  </section>
 </main>
+
 <footer class="site-footer">
   <p>© <span id="year"></span> Tow And Toast • Pittsburgh, PA • <a href="mailto:towandtoast412@gmail.com">towandtoast412@gmail.com</a></p>
 </footer>
-
 </body>
 </html>
