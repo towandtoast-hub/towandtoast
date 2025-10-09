@@ -268,4 +268,49 @@ a:hover{text-decoration:none}
 @keyframes text-cursor-blink {
   50% { opacity: 0; }
 }
+/* === Top Banner Typing Text === */
+.banner-text {
+  flex: 1;
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
+  color: var(--pink);
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid var(--pink);
+  width: 0;
+  animation:
+    typing 6s steps(60, end) infinite,
+    blink 0.8s step-end infinite alternate;
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  40% {
+    width: 100%;
+  }
+  60% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* Layout fix so it sits properly between logo and nav */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
 
