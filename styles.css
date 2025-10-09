@@ -341,6 +341,157 @@ a:hover{text-decoration:none}
   animation: banner-blink .6s steps(1) infinite;
 }
 @keyframes banner-blink { 50% { opacity: 0; } }
+/* Info box at top */
+.info-card {
+  margin-bottom: 2rem;
+}
+
+.info-card h2 {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+/* Menu header */
+.menu-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+.menu-header h2 {
+  margin: 0;
+}
+.menu-sub {
+  color: #6b7280; /* muted gray */
+  font-size: 0.95rem;
+}
+
+/* Make package cards clickable buttons */
+.package-menu {
+  gap: 1rem;
+}
+.pkg-btn {
+  text-align: left;
+  cursor: pointer;
+  border: none;
+  background: var(--card-bg, #fff);
+  transition: transform 0.08s ease, box-shadow 0.12s ease;
+}
+.pkg-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.07);
+}
+
+/* Overlay + Panel */
+.panel-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(17,24,39,0.45);
+  backdrop-filter: blur(1px);
+  z-index: 98;
+}
+
+.side-panel {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: min(560px, 92vw);
+  height: 100dvh;
+  background: #fff;
+  box-shadow: -10px 0 30px rgba(0,0,0,0.15);
+  z-index: 99;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  transition: right 220ms ease;
+}
+.side-panel.open {
+  right: 0;
+}
+
+.panel-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #374151;
+}
+
+.panel-hero img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+  background: #f3f4f6;
+}
+
+.panel-body {
+  padding: 1.25rem 1.25rem 2rem;
+  overflow: auto;
+}
+.panel-body h2 {
+  font-family: "Playfair Display", serif;
+  margin: 0.75rem 0 0.5rem;
+}
+.panel-about {
+  color: #374151;
+}
+
+.panel-footer-photos {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+.panel-footer-photos img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #f3f4f6;
+}
+
+.panel-faq {
+  margin-top: 1.25rem;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 1rem;
+}
+.faq-hint {
+  color: #6b7280;
+  margin: 0 0 0.75rem;
+}
+.form-row {
+  display: grid;
+  gap: 0.35rem;
+  margin-bottom: 0.75rem;
+}
+.form-row input,
+.form-row textarea {
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 0.6rem 0.75rem;
+  font: inherit;
+}
+.btn.primary {
+  background: #e78aa2; /* your pink vibe */
+  color: #fff;
+  border: none;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.btn.primary:hover {
+  filter: brightness(0.95);
+}
+.faq-status {
+  margin-top: 0.6rem;
+  font-size: 0.95rem;
+}
 
 
 
