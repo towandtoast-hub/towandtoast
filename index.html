@@ -15,16 +15,20 @@
 
 <body>
 <header class="site-header">
+  <!-- Logo / Brand -->
   <div class="brand">
-    <a href="index.html" class="brand-link">
+    <a href="index.html" class="brand-link" aria-label="Tow And Toast home">
       <img class="brand-mark" src="assets/logo.png" alt="Tow And Toast Mobile Bar logo">
     </a>
   </div>
 
-  <!--  New Top Banner Text Animation -->
-  <div id="banner-text" class="banner-text"></div>
+  <!-- Banner typing text (between logo and nav) -->
+  <div class="banner">
+    <span id="banner-text" class="banner-text"></span><span class="banner-cursor">|</span>
+  </div>
 
-  <nav class="nav">
+  <!-- Page tabs -->
+  <nav class="nav" role="navigation" aria-label="Main">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="packages.html">Packages</a>
@@ -34,6 +38,7 @@
     <a href="contact.html">Bookings / Contact</a>
   </nav>
 </header>
+
 
 <main class="container">
 
