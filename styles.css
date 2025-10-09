@@ -328,6 +328,24 @@ a:hover{text-decoration:none}
   font-weight: 600;
   margin-top: 6px;
 }
+.hero-title {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 1.05;
+  color: var(--ink);
+  margin-top: 10px;
+  text-align: left;
+}
+
+.hero-title .accent {
+  display: block;
+  font-size: 30px;
+  color: var(--pink);
+  font-weight: 600;
+  margin-top: 8px;
+}
+
 
 
 
