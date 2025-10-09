@@ -320,6 +320,28 @@ a:hover{text-decoration:none}
   .brand{ grid-area: brand }
   .banner{ grid-area: banner }
 }
+/* --- CLEAN SLATE for the banner --- */
+.banner{
+  display:flex; align-items:center; justify-content:center;
+  min-height: 28px;
+  overflow: hidden;
+}
+
+.banner-text{
+  font-family:"Playfair Display", serif;
+  font-weight:700;
+  font-size:18px;
+  color:var(--pink);
+  white-space:nowrap; /* do not wrap mid-typing */
+}
+
+/* Only blink the cursor; no CSS typing animations */
+.banner-cursor{
+  display:inline-block; margin-left:6px; width:1ch; color:var(--pink);
+  animation: banner-blink .6s steps(1) infinite;
+}
+@keyframes banner-blink { 50% { opacity: 0; } }
+
 
 
 
