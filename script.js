@@ -130,7 +130,7 @@ const PACKAGES = {
   "custom-decorations": {
     title: "Custom Decorations",
     about:
-      "From florals to neon, we curate the finishing touches for your bar area so it photographs beautifully and feels personal.",
+      "From florals to lighting, we curate the finishing touches for your bar area so it photographs beautifully and feels personal.",
     hero: "assets/packages/decor/hero.jpg",
     photo1: "assets/packages/decor/p1.jpg",
     photo2: "assets/packages/decor/p2.jpg"
