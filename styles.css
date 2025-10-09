@@ -330,7 +330,7 @@ a:hover{text-decoration:none}
 .banner-text{
   font-family:"Playfair Display", serif;
   font-weight:700;
-  font-size:32px;
+  font-size:34px;
   color:var(--pink);
   white-space:nowrap; /* do not wrap mid-typing */
 }
