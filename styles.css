@@ -312,5 +312,22 @@ a:hover{text-decoration:none}
   justify-content: space-between;
   gap: 1rem;
 }
+.hero-title {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 52px;
+  line-height: 1.05;
+  color: var(--ink);
+  text-align: left;
+}
+
+.hero-title .accent {
+  display: block;
+  font-size: 28px;
+  color: var(--pink);
+  font-weight: 600;
+  margin-top: 6px;
+}
+
 
 
