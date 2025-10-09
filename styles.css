@@ -530,9 +530,12 @@ a:hover{text-decoration:none}
   line-height: 1.3;
 }
 
-.banner-cursor {
-  display: inline-block;
-  margin-left: 4px;
+.banner-cursor{
+  display:inline-block; margin-left:4px; width:1ch; color:var(--pink);
+  font-size: 16px;
+  line-height: 1;
+  vertical-align: bottom;
+  animation: banner-blink .6s steps(1) infinite;
 }
 
 /* MOBILE — compress layout and scale down fonts */
