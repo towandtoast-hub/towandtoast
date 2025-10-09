@@ -496,6 +496,21 @@ a:hover{text-decoration:none}
   font-size: 0.95rem;
 }
 
+/* Responsive Google Calendar embed */
+.calendar-card { background: var(--white); border: 1px solid #f0e7e9; border-radius: 20px; padding: 14px; box-shadow: 0 16px 40px rgba(0,0,0,.06); }
+.calendar-frame { width: 100%; border: 0; border-radius: 14px; display: block; }
+
+/* Desktop/tablet height */
+.calendar-desktop { height: 860px; }
+
+/* Mobile agenda height */
+.calendar-mobile { display: none; height: 640px; }
+
+/* Switch views on small screens */
+@media (max-width: 760px){
+  .calendar-desktop { display: none; }
+  .calendar-mobile { display: block; }
+}
 
 
 
