@@ -56,14 +56,36 @@
     <h1 class="calendar-title">Book the Bar • See Our Availability</h1>
     <div class="divider"></div>
     <p class="calendar-sub">
-      Check live availability below—then <a href="contact.html" style="color:var(--pink);font-weight:600;text-decoration:underline">send your booking request</a>.
+      Check live availability below—then
+      <a href="contact.html" style="color:var(--pink);font-weight:600;text-decoration:underline">send your booking request</a>.
     </p>
+
     <div class="calendar-card">
-      <iframe class="calendar-frame" src="https://calendar.google.com/calendar/embed?src=2c7163734103b2157fd9ad3c99450cd9d0955e5e19487c4193f9c0daf07267a7%40group.calendar.google.com&ctz=America%2FNew_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+      <!-- Desktop/Tablet: Month view -->
+      <iframe
+        class="calendar-frame calendar-desktop"
+        src="https://calendar.google.com/calendar/embed?src=2c7163734103b2157fd9ad3c99450cd9d0955e5e19487c4193f9c0daf07267a7%40group.calendar.google.com&ctz=America%2FNew_York&mode=MONTH&showTitle=0&showNav=1&showPrint=0&showTabs=1&showCalendars=0&showTz=0&wkst=1&bgcolor=%23ffffff"
+        loading="lazy"
+        scrolling="no"
+        frameborder="0"
+        aria-label="Tow And Toast availability calendar (month view)"
+      ></iframe>
+
+      <!-- Mobile: Agenda list view -->
+      <iframe
+        class="calendar-frame calendar-mobile"
+        src="https://calendar.google.com/calendar/embed?src=2c7163734103b2157fd9ad3c99450cd9d0955e5e19487c4193f9c0daf07267a7%40group.calendar.google.com&ctz=America%2FNew_York&mode=AGENDA&showTitle=0&showNav=1&showPrint=0&showTabs=0&showCalendars=0&showTz=0&wkst=1&bgcolor=%23ffffff"
+        loading="lazy"
+        scrolling="no"
+        frameborder="0"
+        aria-label="Tow And Toast Availability Calendar (Agenda View)"
+      ></iframe>
     </div>
+
     <p class="calendar-note">All times display in Eastern (New York) unless your browser overrides it.</p>
   </section>
 </main>
+
 
 <footer class="site-footer">
   <p>© <span id="year"></span> Tow And Toast • Pittsburgh, PA • <a href="mailto:towandtoast412@gmail.com">towandtoast412@gmail.com</a></p>
