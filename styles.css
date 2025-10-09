@@ -631,3 +631,18 @@ a:hover{text-decoration:none}
   background-image: url("assets/images/IMG_4765.jpg");
 }
 
+/* Kill all placeholder watermarks/labels on photo boxes */
+.feat-ph::before,
+.feat-ph::after,
+.hp::before,
+.hp::after,
+.hero-photo::before,
+.hero-photo::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Remove any dashed placeholder borders if present */
+.feat-ph, .hp {
+  border: none !important;
+}
