@@ -531,7 +531,7 @@ a:hover{text-decoration:none}
 }
 
 .banner-cursor{
-  display:inline-block; margin-left:4px; width:1ch; color:var(--pink);
+  display:inline-block; margin-left:2px; width:1ch; color:var(--pink);
   font-size: 16px;
   line-height: 1;
   vertical-align: bottom;
