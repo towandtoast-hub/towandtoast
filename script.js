@@ -28,8 +28,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const phrases = [
     "Tow And Toast",
     "Pittsburgh Mobile Bar",
-    "Craft Cocktails",
-    "Book Today"
+    "Custom Craft Cocktails Tailored and Made Personal For Your Event",
+    "We Tow the Bar, You Raise the Glass"
+    "Book Today!"
   ];
 
   // Tunable timings (ms)
