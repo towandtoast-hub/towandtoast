@@ -237,7 +237,7 @@ faqForm?.addEventListener("submit", async (e) => {
       body: JSON.stringify(payload)
     });
     // no-cors returns opaque; assume success if no error thrown
-    faqStatus.textContent = "Thanks! Your question was sent. We’ll reply by email.";
+    faqStatus.textContent = "Thanks! Your question was sent. We’ll get back to you by email shortly.";
     faqForm.reset();
   } catch (err) {
     console.error(err);
