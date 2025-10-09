@@ -580,4 +580,54 @@ a:hover{text-decoration:none}
 .hero-img{ width:100%; height:100%; min-height:480px; object-fit:cover; display:block }
 @media (max-width:980px){ .hero-img{ min-height:320px } }
 
+/* === Feature photo strip === */
+.feature-photos {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.feat {
+  flex: 1;
+  min-width: 280px;
+  max-width: 400px;
+  text-align: center;
+}
+
+.feat-ph {
+  width: 100%;
+  height: 260px;
+  border-radius: 14px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.1);
+  margin-bottom: 10px;
+  transition: transform 0.25s ease-in-out;
+}
+
+.feat-ph:hover {
+  transform: scale(1.03);
+}
+
+.feat figcaption {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--ink);
+}
+
+/* Assign specific images to each feature box */
+.feature-photos .feat:nth-child(1) .feat-ph {
+  background-image: url("assets/images/IMG_8117.jpg");
+}
+
+.feature-photos .feat:nth-child(2) .feat-ph {
+  background-image: url("assets/images/IMG_8111.jpg");
+}
+
+.feature-photos .feat:nth-child(3) .feat-ph {
+  background-image: url("assets/images/IMG_4765.jpg");
+}
 
