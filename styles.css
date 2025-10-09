@@ -238,3 +238,34 @@ a:hover{text-decoration:none}
   .display{ font-size:34px; }
   .feature-photos{ grid-template-columns:1fr; }
 }
+
+
+/* ===== Typing effect (framework-free) ===== */
+.text-type {
+  display: inline-block;
+  white-space: pre-wrap;
+  font-family: "Playfair Display", serif; /* matches your theme */
+  font-weight: 700;
+}
+
+.text-type__content {
+  /* color can be overridden by JS when cycling textColors */
+  color: var(--ink);
+}
+
+.text-type__cursor {
+  display: inline-block;
+  margin-left: 0.25rem;
+  width: 1ch;
+  color: var(--pink);
+  animation: text-cursor-blink var(--cursor-blink-duration, 0.5s) steps(1) infinite;
+}
+
+.text-type__cursor--hidden {
+  visibility: hidden;
+}
+
+@keyframes text-cursor-blink {
+  50% { opacity: 0; }
+}
+
