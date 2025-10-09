@@ -92,5 +92,45 @@
   <p>© <span id="year"></span> Tow And Toast • Pittsburgh, PA • <a href="mailto:towandtoast412@gmail.com">towandtoast412@gmail.com</a></p>
 </footer>
 <script defer src="script.js"></script>
+<div id="panel-overlay" class="panel-overlay" hidden></div>
+<aside id="package-panel" class="side-panel" aria-hidden="true" tabindex="-1">
+  <button class="panel-close" aria-label="Close panel">&times;</button>
+
+  <div class="panel-hero">
+    <img id="panel-hero-img" src="" alt="" />
+  </div>
+
+  <div class="panel-body">
+    <h2 id="panel-title"></h2>
+    <p id="panel-about" class="panel-about"></p>
+
+    <div class="panel-footer-photos">
+      <img id="panel-photo-1" src="" alt="" />
+      <img id="panel-photo-2" src="" alt="" />
+    </div>
+
+    <div class="panel-faq">
+      <h3>Questions about this package?</h3>
+      <p class="faq-hint">Ask here and we’ll reply by email. (Required fields marked *)</p>
+      <form id="faq-form" novalidate>
+        <input type="hidden" name="package" id="faq-package" />
+        <div class="form-row">
+          <label for="faq-name">Name *</label>
+          <input type="text" id="faq-name" name="name" required />
+        </div>
+        <div class="form-row">
+          <label for="faq-email">Email *</label>
+          <input type="email" id="faq-email" name="email" required />
+        </div>
+        <div class="form-row">
+          <label for="faq-question">Your Question *</label>
+          <textarea id="faq-question" name="question" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn primary">Submit Question</button>
+        <p id="faq-status" class="faq-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</aside>
 </body>
 </html>
