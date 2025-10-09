@@ -337,7 +337,10 @@ a:hover{text-decoration:none}
 
 /* Only blink the cursor; no CSS typing animations */
 .banner-cursor{
-  display:inline-block; margin-left:6px; width:1.5ch; color:var(--pink);
+  display:inline-block; margin-left:6px; width:1ch; color:var(--pink);
+  font-size: 32px;
+  line-height: 1;
+  vertical-align: bottom;
   animation: banner-blink .6s steps(1) infinite;
 }
 @keyframes banner-blink { 50% { opacity: 0; } }
