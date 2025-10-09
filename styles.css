@@ -268,82 +268,57 @@ a:hover{text-decoration:none}
 @keyframes text-cursor-blink {
   50% { opacity: 0; }
 }
-/* === Top Banner Typing Text === */
-.banner-text {
-  flex: 1;
-  text-align: center;
-  font-family: "Playfair Display", serif;
-  font-size: 18px;
-  color: var(--pink);
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid var(--pink);
-  width: 0;
-  animation:
-    typing 6s steps(60, end) infinite,
-    blink 0.8s step-end infinite alternate;
-}
-
-@keyframes typing {
-  0% {
-    width: 0;
-  }
-  40% {
-    width: 100%;
-  }
-  60% {
-    width: 100%;
-  }
-  100% {
-    width: 0;
-  }
-}
-
-@keyframes blink {
-  50% {
-    border-color: transparent;
-  }
-}
-
-/* Layout fix so it sits properly between logo and nav */
-.site-header {
-  display: flex;
+/* --- Header layout: logo | banner | nav --- */
+.site-header{
+  position: sticky; top: 0; z-index: 10;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-.hero-title {
-  font-family: "Playfair Display", serif;
-  font-weight: 700;
-  font-size: 52px;
-  line-height: 1.05;
-  color: var(--ink);
-  text-align: left;
+  gap: 16px;
+  background: var(--white);
+  border-bottom: 1px solid #eaeaea;
+  padding: 12px 20px;
 }
 
-.hero-title .accent {
-  display: block;
-  font-size: 28px;
-  color: var(--pink);
-  font-weight: 600;
-  margin-top: 6px;
-}
-.hero-title {
-  font-family: "Playfair Display", serif;
-  font-weight: 700;
-  font-size: 64px;
-  line-height: 1.05;
-  color: var(--ink);
-  margin-top: 10px;
-  text-align: left;
-}
+/* Brand */
+.brand-link{ display:inline-block }
+.brand-mark{ height:80px; width:auto; display:block }
 
-.hero-title .accent {
-  display: block;
-  font-size: 30px;
-  color: var(--pink);
-  font-weight: 600;
-  margin-top: 8px;
+/* Banner (center area) */
+.banner{
+  display:flex; align-items:center; justify-content:center;
+  min-height: 28px;          /* keeps header height steady */
+  overflow:hidden;
+}
+.banner-text{
+  font-family:"Playfair Display", serif;
+  font-weight:700;
+  font-size:18px;
+  color:var(--pink);
+  white-space:nowrap;
+}
+.banner-cursor{
+  display:inline-block; margin-left:6px; width:1ch; color:var(--pink);
+  animation: banner-blink .6s steps(1) infinite;
+}
+@keyframes banner-blink { 50%{ opacity:0 } }
+
+/* Nav (hover pink + persistent active already in your CSS) */
+.nav{ display:flex; align-items:center; gap:6px; overflow-x:auto }
+.nav a{ padding:10px 12px; border-radius:10px; white-space:nowrap }
+.nav a:hover, .nav a:focus{ background:var(--pink); color:var(--white); outline:none }
+
+/* Responsive: stack banner if screen is narrow */
+@media (max-width: 760px){
+  .site-header{
+    grid-template-columns: auto auto 1fr;
+    grid-template-areas:
+      "brand brand nav"
+      "banner banner banner";
+    row-gap:8px;
+  }
+  .brand{ grid-area: brand }
+  .banner{ grid-area: banner }
 }
 
 
