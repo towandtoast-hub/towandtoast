@@ -200,7 +200,7 @@ document.addEventListener("keydown", (e) => {
    1) Deploy a Google Apps Script Web App (see below).
    2) Paste your URL in GOOGLE_SCRIPT_URL.
 */
-const GOOGLE_SCRIPT_URL = "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL"; // <-- paste URL
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyZ4GMVzzeyo8U6PkYHd5kpHR760gPYpX68Dbn33_jb3ezZ1MUFJ0tra3WrZHX3bHNC/exec"; // <-- paste URL
 
 faqForm?.addEventListener("submit", async (e) => {
   e.preventDefault();
