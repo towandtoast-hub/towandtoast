@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "Pittsburgh's Best Mobile Bar",
     "Custom Craft Cocktails Tailored and Made Personal For Your Event",
     "We Tow the Bar, You Raise the Glass"
-    "Book Today!"
+    "Book Us Today!"
   ];
 
   // Tunable timings (ms)
