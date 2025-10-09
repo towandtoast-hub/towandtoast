@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Your phrases:
   const phrases = [
     "Tow And Toast",
-    "Pittsburgh's Best Mobile Bar",
+    "Pittsburgh's Mobile Bar",
     "Custom Craft Cocktails Made Personal For Your Event",
     "We Tow the Bar, You Raise the Glass",
     "Book Us Today!"
