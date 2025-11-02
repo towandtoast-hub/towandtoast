@@ -1,7 +1,5 @@
 /* =========================================================
-   Tow And Toast — Global Styles (revised)
-   Conserves your theme, fixes duplicate rules, and aligns
-   with current HTML across all pages.
+   Tow And Toast — Global Styles (clean integrated build)
    ========================================================= */
 
 /* ---------- Theme vars ---------- */
@@ -23,7 +21,6 @@ html, body{
 }
 a{ color:var(--charcoal); text-decoration:none; }
 a:hover{ text-decoration:none; }
-
 .container{ max-width:1100px; margin:0 auto; padding:32px 20px; }
 .narrow{ max-width:800px; }
 
@@ -70,7 +67,7 @@ a:hover{ text-decoration:none; }
 }
 @keyframes banner-blink { 50%{ opacity:0 } }
 
-/* Nav (hover pink + persistent active via script) */
+/* Nav (hover pink + persistent active) */
 .nav{ display:flex; align-items:center; gap:6px; overflow-x:auto; }
 .nav a{
   padding:10px 12px; border-radius:10px; white-space:nowrap;
@@ -86,10 +83,7 @@ a:hover{ text-decoration:none; }
 
 /* Mobile header adjustments */
 @media (max-width:760px){
-  .site-header{
-    display:flex; flex-direction:column; align-items:center;
-    gap:6px; padding:10px 12px;
-  }
+  .site-header{ display:flex; flex-direction:column; gap:6px; padding:10px 12px; }
   .brand-mark{ height:60px; }
   .banner{ order:2; }
   .banner-text{ font-size:15px; max-width:100%; white-space:normal; line-height:1.3; padding:0 10px; }
@@ -119,19 +113,32 @@ a:hover{ text-decoration:none; }
 .card h3{ margin-top:0; }
 
 /* =========================================================
-   HOME — Hero block (two-column) + highlights + 3-photos
-   (matches index.html structure)
+   HOME — Hero block (image top-right; left text centered)
    ========================================================= */
 .hero-refined{
-  display:grid; grid-template-columns: 1.15fr .85fr; gap:22px;
-  border-radius:24px; padding:36px 28px; margin-top:14px;
+  position: relative;
+  display: block;
   background:
     radial-gradient(90% 120% at -10% -20%, rgba(236,160,165,.24), rgba(236,160,165,0)),
     linear-gradient(180deg,#fff,#fff2f6);
   border:1px solid #f0d6d9;
-  position:relative; overflow:hidden;
+  border-radius:24px;
+  padding:36px 28px;
+  overflow:hidden;
+  min-height:460px;
 }
-.hero-content{ position:relative; z-index:1; text-align:left; }
+
+/* Left side content — fully centered, constrained to left half */
+.hero-content{
+  position: relative;
+  z-index: 2;
+  max-width: 50%;
+  margin: 0;
+  display:flex; flex-direction:column;
+  justify-content:center;       /* vertical centering */
+  align-items:center;           /* horizontal centering */
+  text-align:center;
+}
 
 .chip{
   display:inline-block; background:#fff; border:1px solid #f6d8de; color:#a34e59;
@@ -144,35 +151,48 @@ a:hover{ text-decoration:none; }
 .display .accent{ color:var(--pink); }
 .lede{ font-size:18px; color:#623a43; margin:0 0 18px; }
 
-/* Center the hero buttons within the left column only (keeps photo fixed) */
-.hero-ctas{ display:flex; justify-content:center; gap:14px; margin-top:10px; }
+/* Center CTAs under the text */
+.hero-ctas{
+  display:flex; justify-content:center; gap:14px; margin-top:16px;
+}
 .hero-ctas .btn:hover{ box-shadow:0 8px 22px rgba(236,160,165,.25); }
 
-/* If you haven't removed the bullets yet, visually hide them safely */
+/* Remove bullets block entirely if still present */
 .hero-bullets{ display:none; }
 
-/* Right-side image figure */
+/* Hero image pinned to top-right half */
 .hero-art{
-  border:1px solid #f0e7e9; border-radius:20px; overflow:hidden;
+  position:absolute;
+  top:0; right:0;
+  width:50%; height:100%;
+  border-top-right-radius:24px; border-bottom-right-radius:24px;
+  overflow:hidden;
   box-shadow:0 16px 40px rgba(0,0,0,.06);
-  min-height:280px;
 }
 .hero-img{
-  width:100%; height:100%; min-height:480px; object-fit:cover; display:block;
-}
-@media (max-width:980px){
-  .hero-refined{ grid-template-columns:1fr; }
-  .hero-art{ order:-1; }
-  .hero-img{ min-height:320px; }
+  width:100%; height:100%;
+  object-fit:cover; display:block;
 }
 
-/* Highlights row */
+/* Mobile: stack and keep full width image below content */
+@media (max-width:980px){
+  .hero-refined{ min-height:auto; padding:28px 20px; }
+  .hero-content{ max-width:100%; text-align:center; }
+  .hero-art{
+    position:static; width:100%; height:auto;
+    border-radius:20px; margin-top:18px;
+  }
+  .hero-img{ height:320px; object-fit:cover; }
+}
+
+/* =========================================================
+   HOME — Highlights + 3-photos (unchanged)
+   ========================================================= */
 .highlights{
   display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
   gap:16px; margin-top:26px;
 }
 
-/* Feature photo strip (3 images) */
 .feature-photos{
   display:flex; justify-content:space-around; gap:20px;
   margin-top:40px; flex-wrap:wrap;
@@ -189,7 +209,7 @@ a:hover{ text-decoration:none; }
   font-family:Inter, sans-serif; font-weight:600; font-size:1.1rem; color:var(--ink);
 }
 
-/* Assign specific index feature images (you set these) */
+/* Example bindings — replace with your filenames as needed */
 .feature-photos .feat:nth-child(1) .feat-ph{ background-image:url("assets/images/IMG_8117.jpg"); }
 .feature-photos .feat:nth-child(2) .feat-ph{ background-image:url("assets/images/IMG_8111.jpg"); }
 .feature-photos .feat:nth-child(3) .feat-ph{ background-image:url("assets/images/IMG_4765.jpg"); }
@@ -202,19 +222,16 @@ a:hover{ text-decoration:none; }
 
 /* =========================================================
    PACKAGES — Menu grid + Slide-in panel + FAQ form
-   (matches packages.html structure)
    ========================================================= */
 .info-card{ margin-bottom:2rem; }
-.info-card h2{
-  font-family:"Playfair Display",serif; font-weight:700; margin-bottom:.5rem;
-}
-
+.info-card h2{ font-family:"Playfair Display",serif; font-weight:700; margin-bottom:.5rem; }
 .menu-header{ display:flex; align-items:baseline; gap:1rem; margin-bottom:.5rem; }
 .menu-header h2{ margin:0; }
 .menu-sub{ color:#6b7280; font-size:.95rem; }
 
-/* Package menu buttons (cards) */
-.cards-grid.package-menu{ display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:1rem; }
+.cards-grid.package-menu{
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:1rem;
+}
 .pkg-btn{
   text-align:left; cursor:pointer; border:none; background:#fff;
   transition: transform .08s ease, box-shadow .12s ease;
@@ -227,7 +244,6 @@ a:hover{ text-decoration:none; }
   position:fixed; inset:0; background:rgba(17,24,39,0.45);
   backdrop-filter: blur(1px); z-index:98;
 }
-
 .side-panel{
   position:fixed; top:0; right:-100%;
   width:min(560px, 92vw); height:100dvh;
@@ -242,16 +258,13 @@ a:hover{ text-decoration:none; }
   background:transparent; border:none; font-size:2rem; line-height:1;
   cursor:pointer; color:#374151;
 }
-
 .panel-hero img{
   width:100%; height:240px; object-fit:cover; display:block; background:#f3f4f6;
 }
-
 .panel-body{ padding:1.25rem 1.25rem 2rem; overflow:auto; }
 .panel-body h2{ font-family:"Playfair Display",serif; margin:.75rem 0 .5rem; }
 .panel-about{ color:#374151; }
 
-/* Two supporting photos */
 .panel-footer-photos{
   margin-top:1rem; display:grid; grid-template-columns:1fr 1fr; gap:.75rem;
 }
@@ -273,8 +286,7 @@ a:hover{ text-decoration:none; }
 .faq-status{ margin-top:.6rem; font-size:.95rem; }
 
 /* =========================================================
-   CALENDAR — desktop month + mobile agenda (two iframes)
-   (matches calendar.html)
+   CALENDAR — desktop month + mobile agenda
    ========================================================= */
 .calendar-card{
   background: var(--white); border:1px solid #f0e7e9; border-radius:20px;
@@ -283,20 +295,18 @@ a:hover{ text-decoration:none; }
 .calendar-frame{ width:100%; border:0; border-radius:14px; display:block; }
 .calendar-desktop{ height:860px; }
 .calendar-mobile{ display:none; height:640px; }
-
 @media (max-width:760px){
   .calendar-desktop{ display:none; }
   .calendar-mobile{ display:block; }
 }
 
 /* =========================================================
-   GALLERY — simple year sections + grid + lightbox hooks
+   GALLERY — grid + lightbox hooks
    ========================================================= */
 #gallery{ display:grid; gap:28px; }
 .gallery-year h2{ margin:0 0 12px; }
 .gallery-grid{
-  display:grid; grid-template-columns:repeat(auto-fill, minmax(220px,1fr));
-  gap:12px;
+  display:grid; grid-template-columns:repeat(auto-fill, minmax(220px,1fr)); gap:12px;
 }
 .gallery-grid img{
   width:100%; height:220px; object-fit:cover;
