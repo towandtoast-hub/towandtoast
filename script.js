@@ -115,7 +115,7 @@ const PACKAGES = {
     title: "Bar Trailer",
     about:
       "Our signature mobile bar trailer is a show-stopping centerpiece with full-service capability. Perfect for weddings, showers, and large celebrations.",
-    hero: "assets/packages/trailer/hero.jpg",
+    hero: "assets/packages/trailer/herotrailer.jpg",
     photo1: "assets/packages/trailer/p1.jpg",
     photo2: "assets/packages/trailer/p2.jpg"
   },
@@ -123,7 +123,7 @@ const PACKAGES = {
     title: "Custom Cocktail Menu",
     about:
       "We’ll collaborate on a bespoke cocktail list that fits your story and theme—plus matching printed signage for a cohesive guest experience.",
-    hero: "assets/packages/menu/hero.jpg",
+    hero: "assets/packages/menu/heromenu.jpg",
     photo1: "assets/packages/menu/p1.jpg",
     photo2: "assets/packages/menu/p2.jpg"
   },
@@ -131,7 +131,7 @@ const PACKAGES = {
     title: "Custom Decorations",
     about:
       "From florals to lighting, we curate the finishing touches for your bar area so it photographs beautifully and feels personal.",
-    hero: "assets/packages/decor/hero.jpg",
+    hero: "assets/packages/decor/herodecor.jpg",
     photo1: "assets/packages/decor/p1.jpg",
     photo2: "assets/packages/decor/p2.jpg"
   },
@@ -139,7 +139,7 @@ const PACKAGES = {
     title: "Consultation",
     about:
       "A complimentary planning session to map out logistics, timelines, and your must-have details. We’ll help you choose the right package and add-ons.",
-    hero: "assets/packages/consult/hero.jpg",
+    hero: "assets/packages/consult/heroconsult.jpg",
     photo1: "assets/packages/consult/p1.jpg",
     photo2: "assets/packages/consult/p2.jpg"
   }
