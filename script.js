@@ -99,7 +99,7 @@ const PACKAGES = {
     title: "Bartending Services",
     about:
       "Professional, polished bartenders to keep your event running smoothly. Includes setup, breakdown, bar tools, and guidance on shopping lists and quantities.",
-    hero: "assets/packages/bartending/hero.jpg",
+    hero: "assets/packages/bartending/hero.png",
     photo1: "assets/packages/bartending/p1.jpg",
     photo2: "assets/packages/bartending/p2.jpg"
   },
