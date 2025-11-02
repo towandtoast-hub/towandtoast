@@ -107,7 +107,7 @@ const PACKAGES = {
     title: "Pop-Up Tabletop Bar",
     about:
       "A compact, elegant bar solution for intimate or indoor events. Styled to your theme with minimal footprint and maximum charm.",
-    hero: "assets/packages/tabletop/hero.jpg",
+    hero: "assets/packages/tabletop/herotable.jpg",
     photo1: "assets/packages/tabletop/p1.jpg",
     photo2: "assets/packages/tabletop/p2.jpg"
   },
