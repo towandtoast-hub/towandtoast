@@ -125,8 +125,10 @@ a:hover{ text-decoration:none; }
   gap:24px;
   padding:36px 28px;
   background:
-    radial-gradient(90% 120% at -10% -20%, rgba(236,160,165,.24), rgba(236,160,165,0)),
-    linear-gradient(180deg,#fff,#fff2f6);
+    radial-gradient(120% 160% at -10% -20%, rgba(var(--pink-rgb), .45), rgba(var(--pink-rgb), 0) 60%),
+    linear-gradient(180deg, #fff5f7 0%, #ffe9ef 100%);
+}
+
   border:1px solid #f0d6d9;
   border-radius:24px;
   overflow:hidden;
