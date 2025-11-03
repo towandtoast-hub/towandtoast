@@ -217,11 +217,10 @@ a:hover{ text-decoration:none; }
   font-family:Inter, sans-serif; font-weight:600; font-size:1.1rem; color:var(--ink);
 }
 
-/* If using specific images, bind them like this:
+
 .feature-photos .feat:nth-child(1) .feat-ph{ background-image:url("assets/images/IMG_8117.jpg"); }
 .feature-photos .feat:nth-child(2) .feat-ph{ background-image:url("assets/images/IMG_8111.jpg"); }
 .feature-photos .feat:nth-child(3) .feat-ph{ background-image:url("assets/images/IMG_4765.jpg"); }
-*/
 
 /* =========================================================
    PACKAGES — Menu grid + Slide-in panel + FAQ form
