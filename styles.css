@@ -1,5 +1,5 @@
 /* =========================================================
-   Tow And Toast — Global Styles (clean integrated build)
+   Tow And Toast — Stylesheet (refined, no overrides)
    ========================================================= */
 
 /* ---------- Theme vars ---------- */
@@ -21,6 +21,7 @@ html, body{
 }
 a{ color:var(--charcoal); text-decoration:none; }
 a:hover{ text-decoration:none; }
+
 .container{ max-width:1100px; margin:0 auto; padding:32px 20px; }
 .narrow{ max-width:800px; }
 
@@ -29,20 +30,20 @@ a:hover{ text-decoration:none; }
    ========================================================= */
 .site-header{
   position: sticky; top:0; z-index:10;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  gap: 16px;
-  background: var(--white);
-  border-bottom: 1px solid #eaeaea;
-  padding: 12px 20px;
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:center;
+  gap:16px;
+  background:var(--white);
+  border-bottom:1px solid #eaeaea;
+  padding:12px 20px;
 }
 
 /* Brand */
 .brand-link{
   display:flex; align-items:center; gap:12px;
   padding:6px 12px; border-radius:16px;
-  background: linear-gradient(180deg, #fff, #fff6f8);
+  background:linear-gradient(180deg,#fff,#fff6f8);
   border:1px solid #f2d6dc;
   box-shadow:0 4px 14px rgba(236,160,165,.18);
 }
@@ -112,69 +113,88 @@ a:hover{ text-decoration:none; }
 }
 .card h3{ margin-top:0; }
 
-/* --- HERO Refinement: image top-right, text centered left --- */
-/* --- HERO Refinement: image top-right, text centered left (wider hero) --- */
-.hero-refined {
-  display: flex;
-  align-items: center;          /* centers hero text vertically */
-  justify-content: space-between;
-  flex-wrap: nowrap;            /* prevents wrapping until mobile */
-  position: relative;
-  gap: 40px;                    /* more breathing room between text and image */
-  width: 100%;
-  max-width: 1400px;            /* wider hero area */
-  margin: 0 auto;               /* center hero on page */
-  padding: 60px 40px;
+/* =========================================================
+   HOME — Hero (2-col: text left, image right)
+   ========================================================= */
+.hero-refined{
+  position:relative;
+  display:grid;
+  grid-template-columns:1.1fr 0.9fr;   /* left text | right image */
+  align-items:stretch;                 /* same height columns */
+  gap:24px;
+  padding:36px 28px;
+  background:
+    radial-gradient(90% 120% at -10% -20%, rgba(236,160,165,.24), rgba(236,160,165,0)),
+    linear-gradient(180deg,#fff,#fff2f6);
+  border:1px solid #f0d6d9;
+  border-radius:24px;
+  overflow:hidden;
+  min-height:520px;
 }
 
-.hero-left {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;           /* centers text and buttons */
+/* Left column: centered content */
+.hero-content{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;     /* vertical center */
+  align-items:center;         /* horizontal center */
+  text-align:center;
+  margin:0;
+  padding:8px 10px;
 }
 
-.hero-content {
-  max-width: 560px;
+/* Brand chip & headings */
+.chip{
+  display:inline-block; background:#fff; border:1px solid #f6d8de; color:#a34e59;
+  padding:6px 10px; border-radius:999px; font-size:12px; font-weight:600;
+}
+.display{
+  font-family:"Playfair Display",serif; font-weight:700;
+  font-size:48px; line-height:1.05; margin:12px 0 10px; color:var(--ink);
+}
+.display .accent{ color:var(--pink); }
+.lede{ font-size:18px; color:#623a43; margin:0 0 18px; }
+
+/* Buttons under text */
+.hero-ctas{
+  display:flex; justify-content:center; gap:14px; margin-top:16px;
+}
+.hero-ctas .btn:hover{ box-shadow:0 8px 22px rgba(236,160,165,.25); }
+
+/* Right column: centered image that fills hero height */
+.hero-art{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100%;
+}
+.hero-img{
+  width:100%;
+  max-width:560px;     /* control width so it doesn’t crowd text */
+  height:100%;
+  object-fit:cover;    /* fill hero height without distortion */
+  border-radius:20px;
+  box-shadow:0 16px 40px rgba(0,0,0,.06);
 }
 
-.hero-art {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
-  margin-top: -20px;            /* move image slightly up */
-  position: relative;
-}
-
-.hero-art img {
-  width: 90%;
-  height: auto;
-  border-radius: 20px;
-  object-fit: cover;
-  box-shadow: 0 16px 40px rgba(0,0,0,0.06);
-}
-
-/* keep mobile stacking clean */
-@media (max-width: 980px) {
-  .hero-refined {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+/* Mobile: stack and center */
+@media (max-width:980px){
+  .hero-refined{
+    grid-template-columns:1fr;
+    padding:28px 20px;
+    min-height:auto;
   }
-  .hero-art {
-    margin-top: 10px;
-    justify-content: center;
-  }
-  .hero-art img {
-    width: 100%;
-    min-height: 300px;
+  .hero-art{ order:2; }
+  .hero-img{
+    width:100%;
+    max-width:100%;
+    height:340px;
+    object-fit:cover;
   }
 }
 
 /* =========================================================
-   HOME — Highlights + 3-photos (unchanged)
+   HOME — Highlights + 3-photos
    ========================================================= */
 .highlights{
   display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
@@ -197,16 +217,11 @@ a:hover{ text-decoration:none; }
   font-family:Inter, sans-serif; font-weight:600; font-size:1.1rem; color:var(--ink);
 }
 
-/* Example bindings — replace with your filenames as needed */
+/* If using specific images, bind them like this:
 .feature-photos .feat:nth-child(1) .feat-ph{ background-image:url("assets/images/IMG_8117.jpg"); }
 .feature-photos .feat:nth-child(2) .feat-ph{ background-image:url("assets/images/IMG_8111.jpg"); }
 .feature-photos .feat:nth-child(3) .feat-ph{ background-image:url("assets/images/IMG_4765.jpg"); }
-
-/* Remove any leftover placeholder watermarks/borders */
-.feat-ph::before, .feat-ph::after,
-.hp::before, .hp::after,
-.hero-photo::before, .hero-photo::after{ content:none !important; display:none !important; }
-.feat-ph, .hp{ border:none !important; }
+*/
 
 /* =========================================================
    PACKAGES — Menu grid + Slide-in panel + FAQ form
@@ -326,111 +341,3 @@ a:hover{ text-decoration:none; }
 }
 .social-links a:hover{ opacity:.7; }
 .social-icon{ width:20px; height:20px; vertical-align:middle; }
-
-/* =========================
-   HERO FIX PACK (non-destructive)
-   Restores theme colors/typography and layout
-   ========================= */
-
-/* Theme vars (ensure present and not overridden) */
-:root{
-  --pink:#ECA0A5;
-  --ink:#111214;
-  --sand:#F7F1EB;
-  --white:#FFFFFF;
-}
-
-/* Body + headings font (keeps Inter + Playfair) */
-body{ font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
-.display{ font-family: "Playfair Display", serif; font-weight:700; color:var(--ink); }
-.display .accent{ color: var(--pink); }
-
-/* Restore chip look */
-.chip{
-  display:inline-block;
-  background:#fff;
-  border:1px solid #f6d8de;
-  color:#a34e59;
-  padding:6px 10px;
-  border-radius:999px;
-  font-size:12px;
-  font-weight:600;
-}
-
-/* Restore hero background + border */
-.hero.hero-refined{
-  position: relative;
-  background:
-    radial-gradient(90% 120% at -10% -20%, rgba(236,160,165,.24), rgba(236,160,165,0)),
-    linear-gradient(180deg,#fff,#fff2f6);
-  border:1px solid #f0d6d9;
-  border-radius:24px;
-  overflow:hidden;
-}
-
-/* Make only the hero wider (not the whole page) */
-.hero.hero-refined{
-  width: 100%;
-  max-width: 1400px;   /* wider canvas for text + photo */
-  margin: 0 auto;
-  padding: 60px 40px;
-  display: flex;
-  align-items: center;          /* vertical center for left column */
-  justify-content: space-between;
-  gap: 40px;
-  flex-wrap: nowrap;
-}
-
-/* Left column: center text + buttons */
-.hero-left{
-  flex: 1.1;                    /* give text a bit more space */
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-}
-.hero-content{ max-width: 640px; }   /* readable line length */
-
-/* Keep CTAs centered under text */
-.hero-ctas{
-  display:flex; justify-content:center; gap:14px; margin-top:16px;
-}
-
-/* Right image: pushed to far right, slightly lifted */
-.hero-art{
-  flex: 0.9;                    /* slightly narrower than text column */
-  display:flex; justify-content:flex-end; align-items:flex-start;
-  margin-top: -12px;            /* lift a touch to save vertical space */
-}
-.hero-art .hero-img{
-  width: 95%;
-  height: auto;
-  border-radius: 20px;
-  object-fit: cover;
-  box-shadow: 0 16px 40px rgba(0,0,0,0.06);
-}
-
-/* Hide bullets if any remain */
-.hero-bullets{ display:none; }
-
-/* Mobile stacking */
-@media (max-width: 980px){
-  .hero.hero-refined{
-    max-width: 100%;
-    padding: 28px 20px;
-    flex-direction: column;
-    gap: 18px;
-  }
-  .hero-left{ flex: unset; }
-  .hero-content{ max-width: 100%; }
-  .hero-art{
-    margin-top: 6px;
-    justify-content: center;
-    width: 100%;
-  }
-  .hero-art .hero-img{
-    width: 100%;
-    min-height: 300px;
-    object-fit: cover;
-  }
-}
