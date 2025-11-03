@@ -113,13 +113,18 @@ a:hover{ text-decoration:none; }
 .card h3{ margin-top:0; }
 
 /* --- HERO Refinement: image top-right, text centered left --- */
+/* --- HERO Refinement: image top-right, text centered left (wider hero) --- */
 .hero-refined {
   display: flex;
   align-items: center;          /* centers hero text vertically */
   justify-content: space-between;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;            /* prevents wrapping until mobile */
   position: relative;
-  gap: 20px;
+  gap: 40px;                    /* more breathing room between text and image */
+  width: 100%;
+  max-width: 1400px;            /* wider hero area */
+  margin: 0 auto;               /* center hero on page */
+  padding: 60px 40px;
 }
 
 .hero-left {
