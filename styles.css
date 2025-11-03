@@ -291,7 +291,7 @@ a:hover{ text-decoration:none; }
    CALENDAR — desktop month + mobile agenda
    ========================================================= */
 .calendar-card{
-  background: var(--white); border:1px solid #f0e7e9; border-radius:20px;
+  background: var(--sand); border:1px solid #f0e7e9; border-radius:20px;
   padding:14px; box-shadow:0 16px 40px rgba(0,0,0,.06);
 }
 .calendar-frame{ width:100%; border:0; border-radius:14px; display:block; }
