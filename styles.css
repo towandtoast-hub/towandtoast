@@ -328,6 +328,25 @@ a:hover{ text-decoration:none; }
 .form-embed iframe{ width:100%; height:900px; border:0; border-radius:14px; box-shadow:0 6px 18px rgba(17,18,20,0.03); }
 
 /* =========================================================
+   ABOUT PAGE — Photo Grid
+   ========================================================= */
+.ph {
+  background-size: cover;          /* keeps proportions, fills the box */
+  background-position: center;     /* centers the subject */
+  background-repeat: no-repeat;
+  border-radius: 14px;
+  aspect-ratio: 4 / 3;             /* sets shape of image boxes */
+  transition: transform 0.3s ease;
+}
+.ph:hover { transform: scale(1.03); }
+
+/* Remove watermark text overlay */
+.ph::before {
+  content: "";                     /* disables “Add photo” text */
+}
+
+
+/* =========================================================
    Footer + Social
    ========================================================= */
 .site-footer{ padding:28px 20px; text-align:center; color:#555; }
