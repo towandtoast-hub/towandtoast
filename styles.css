@@ -170,8 +170,8 @@ a:hover{ text-decoration:none; }
 }
 .hero-img{
   width:100%;
-  max-width:580px;     /* control width so it doesn’t crowd text */
-  height:100%;
+  max-width:560px;     /* control width so it doesn’t crowd text */
+  height: auto;
   object-fit:cover;    /* fill hero height without distortion */
   border-radius:20px;
   box-shadow:0 16px 40px rgba(0,0,0,.06);
