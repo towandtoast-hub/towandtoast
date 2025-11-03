@@ -1,120 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Tow And Toast • Home</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tow And Toast • Home</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="styles.css" />
-<script defer src="script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
 </head>
 
 <body>
-<header class="site-header">
-  <!-- Logo / Brand -->
-  <div class="brand">
-    <a href="index.html" class="brand-link" aria-label="Tow And Toast home">
-      <img class="brand-mark" src="assets/logo.png" alt="Tow And Toast Mobile Bar logo">
-    </a>
-  </div>
+  <header class="site-header">
+    <div class="brand">
+      <a href="index.html" class="brand-link" aria-label="Tow And Toast home">
+        <img class="brand-mark" src="assets/logo.png" alt="Tow And Toast Mobile Bar logo">
+      </a>
+    </div>
 
-  <!-- Banner typing text (between logo and nav) -->
-  <div class="banner">
-    <span id="banner-text" class="banner-text"></span><span class="banner-cursor">|</span>
-  </div>
+    <div class="banner">
+      <span id="banner-text" class="banner-text"></span><span class="banner-cursor">|</span>
+    </div>
 
-  <!-- Page tabs -->
-  <nav class="nav" role="navigation" aria-label="Main">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="packages.html">Packages</a>
-    <a href="calendar.html">Calendar</a>
-    <a href="trailer.html">Trailer Tour</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="contact.html">Bookings / Contact</a>
-  </nav>
-</header>
+    <nav class="nav" role="navigation" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="packages.html">Packages</a>
+      <a href="calendar.html">Calendar</a>
+      <a href="trailer.html">Trailer Tour</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Bookings / Contact</a>
+    </nav>
+  </header>
 
+  <main class="container">
+    <section class="hero hero-refined">
+      <div class="hero-left">
+        <div class="hero-content">
+          <span class="chip">Pittsburgh • Mobile Bar</span>
 
-<main class="container">
+          <h1 class="display hero-title">
+            Tow And Toast
+            <span class="accent">Pittsburgh's Premier Mobile Bar Experience</span>
+          </h1>
 
-  <!-- HERO: polished “big box” with subtle trailer accent + CTAs -->
-  <section class="hero hero-refined">
-  <div class="hero-content">
-    <span class="chip">Pittsburgh • Mobile Bar</span>
+          <p class="lede">
+            Woman-owned bartending delivering polished service, custom menus, and a good-time vibe to
+            weddings, showers, graduations, and private events. "We Tow the Bar, You Raise the Glass"
+          </p>
 
-    <!-- Big Tow and Toast Title -->
-    <h1 class="display hero-title">
-      Tow And Toast
-      <span class="accent">Pittsburgh's Premier Mobile Bar Experience</span>
-    </h1>
+          <div class="cta-row hero-ctas">
+            <a class="btn btn-primary" href="contact.html">Book Now</a>
+            <a class="btn btn-outline" href="packages.html">View Packages</a>
+          </div>
 
-    <p class="lede">
-      A woman-owned mobile bartending service bringing polished hospitality, handcrafted cocktails, and a joyful spirit to weddings, showers, graduations, and private events. “We Tow the Bar, You Raise the Glass.”
+          <ul class="hero-bullets">
+            <li>Events in and outside area of Pittsburgh, PA</li>
+            <li>Signature cocktails & menu design</li>
+            <li>Trailer bar or sleek pop-up setups</li>
+          </ul>
+        </div>
+      </div>
+
+      <figure class="hero-art">
+        <img src="assets/images/IMG_8028.jpg" alt="Tow And Toast Owners" class="hero-img">
+      </figure>
+    </section>
+
+    <section class="highlights">
+      <div class="card">
+        <h3>Experienced & Professional</h3>
+        <p>Each bartender has 10+ years behind the bar at Pittsburgh favorites. We bring the craft—and the fun.</p>
+      </div>
+      <div class="card">
+        <h3>Custom Menus</h3>
+        <p>Signature cocktails tailored to your event. We’ll design and print a menu that fits your vibe.</p>
+      </div>
+      <div class="card">
+        <h3>Trailer or Pop-Up</h3>
+        <p>Choose our full bar trailer or a sleek tabletop setup for smaller venues. We fit your space.</p>
+      </div>
+    </section>
+
+    <section class="feature-photos" aria-label="Feature photos">
+      <figure class="feat">
+        <div class="feat-ph"></div>
+        <figcaption>Experienced & Professional</figcaption>
+      </figure>
+      <figure class="feat">
+        <div class="feat-ph"></div>
+        <figcaption>Custom Menus</figcaption>
+      </figure>
+      <figure class="feat">
+        <div class="feat-ph"></div>
+        <figcaption>Trailer or Pop-Up</figcaption>
+      </figure>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Tow And Toast • Pittsburgh, PA •
+      <a href="mailto:towandtoast412@gmail.com">towandtoast412@gmail.com</a>
     </p>
-
-    <div class="cta-row hero-ctas">
-      <a class="btn btn-primary" href="contact.html">Book Now!</a>
-      <a class="btn btn-outline" href="packages.html">View Packages</a>
-    </div>
-
-
-<figure class="hero-art">
-  <img src="assets/images/IMG_8028.jpg"
-       alt="Tow And Toast Owners"
-       class="hero-img">
-</figure>
-
-</section>
-
-
-  <!-- 3 feature cards (your existing copy) -->
-  <section class="highlights">
-    <div class="card">
-      <h3>Experienced & Professional</h3>
-      <p>Each bartender has 10+ years behind the bar at Pittsburgh favorites. We bring the craft—and the fun.</p>
-    </div>
-    <div class="card">
-      <h3>Custom Menus</h3>
-      <p>Signature cocktails tailored to your event. We’ll design and print a menu that fits your vibe.</p>
-    </div>
-    <div class="card">
-      <h3>Trailer or Pop-Up</h3>
-      <p>Choose our full bar trailer or a sleek tabletop setup for smaller venues. We fit your space.</p>
-    </div>
-  </section>
-
-  <!-- NEW: 3-photo strip (one photo per highlight) -->
-  <section class="feature-photos" aria-label="Feature photos">
-    <!-- Replace the placeholders with <img> (see notes below) -->
-    <figure class="feat">
-      <div class="feat-ph"></div>
-      <figcaption>Experienced & Professional</figcaption>
-    </figure>
-    <figure class="feat">
-      <div class="feat-ph"></div>
-      <figcaption>Custom Menus</figcaption>
-    </figure>
-    <figure class="feat">
-      <div class="feat-ph"></div>
-      <figcaption>Trailer or Pop-Up</figcaption>
-    </figure>
-  </section>
-
-</main>
-
-<footer class="site-footer">
-  <p>© <span id="year"></span> Tow And Toast • Pittsburgh, PA •
-    <a href="mailto:towandtoast412@gmail.com">towandtoast412@gmail.com</a>
-  </p>
-  <p class="social-links">
-    <a href="https://www.instagram.com/towandtoast/" target="_blank" rel="noopener noreferrer">
-      <img src="assets/icons/instagram.svg" alt="Instagram" class="social-icon">
-      Follow us on Instagram!
-    </a>
-  </p>
-</footer>
+    <p class="social-links">
+      <a href="https://www.instagram.com/towandtoast/" target="_blank" rel="noopener noreferrer">
+        <img src="assets/icons/instagram.svg" alt="Instagram" class="social-icon">
+        Follow us on Instagram!
+      </a>
+    </p>
+  </footer>
+</body>
+</html>
