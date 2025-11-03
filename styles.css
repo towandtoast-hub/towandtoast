@@ -327,22 +327,47 @@ a:hover{ text-decoration:none; }
 .video-embed iframe{ width:100%; height:560px; border:0; border-radius:14px; box-shadow:0 6px 18px rgba(17,18,20,0.03); }
 .form-embed iframe{ width:100%; height:900px; border:0; border-radius:14px; box-shadow:0 6px 18px rgba(17,18,20,0.03); }
 
-/* =========================================================
-   ABOUT PAGE — Photo Grid
-   ========================================================= */
-.ph {
-  background-size: cover;          /* keeps proportions, fills the box */
-  background-position: center;     /* centers the subject */
+/* ================================
+   ABOUT — Photo Grid (stable layout)
+   ================================ */
+.photo-grid{
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 12px;
+}
+
+/* Base photo tile: no distortion, rounded, covers area */
+.ph{
+  width: 100%;
+  background-size: cover;        /* fills box w/out distortion (may crop) */
+  background-position: center;   /* keeps subject centered */
   background-repeat: no-repeat;
   border-radius: 14px;
-  aspect-ratio: 4 / 3;             /* sets shape of image boxes */
-  transition: transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
-.ph:hover { transform: scale(1.03); }
 
-/* Remove watermark text overlay */
-.ph::before {
-  content: "";                     /* disables “Add photo” text */
+/* Remove the watermark/placeholder text */
+.ph::before{ content: "" !important; }
+
+/* Column spans + aspect ratios per size */
+.ph-6{ grid-column: span 6; aspect-ratio: 16 / 9; }  /* wide tile */
+.ph-4{ grid-column: span 4; aspect-ratio: 4 / 3;  }  /* medium tile */
+.ph-3{ grid-column: span 3; aspect-ratio: 1 / 1;  }  /* square tile */
+
+/* Tablet: make items larger and consistent */
+@media (max-width: 980px){
+  .ph-6{ grid-column: span 6; aspect-ratio: 16 / 10; }
+  .ph-4{ grid-column: span 6; aspect-ratio: 4 / 3; }
+  .ph-3{ grid-column: span 6; aspect-ratio: 1 / 1; }
+}
+
+/* Mobile: single column, tidy ratios */
+@media (max-width: 640px){
+  .ph-6, .ph-4, .ph-3{ grid-column: 1 / -1; }
+  .ph-6{ aspect-ratio: 16 / 10; }
+  .ph-4{ aspect-ratio: 4 / 3; }
+  .ph-3{ aspect-ratio: 1 / 1; }
 }
 
 
