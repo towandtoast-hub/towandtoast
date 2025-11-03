@@ -369,6 +369,20 @@ a:hover{ text-decoration:none; }
   .ph-4{ aspect-ratio: 4 / 3; }
   .ph-3{ aspect-ratio: 1 / 1; }
 }
+/* =========================================================
+   ABOUT — Hero Background Color
+   ========================================================= */
+.about-feature {
+  background-color: var(--sand);   /* restores the sand background */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 0;
+  padding: 3rem 0;                 /* optional: add breathing room */
+  position: relative;
+}
+
 
 /* =========================================================
    ABOUT — Hero Replacement Image
