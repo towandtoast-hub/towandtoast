@@ -5,8 +5,8 @@
 /* ---------- Theme vars ---------- */
 :root{
   --pink:#ECA0A5;
+  --pink-rgb:236,160,165;
   --ink:#111214;
-  --charcoal:#2A2B2E;
   --sand:#F7F1EB;
   --white:#FFFFFF;
 }
